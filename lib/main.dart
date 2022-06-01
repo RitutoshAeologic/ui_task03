@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:untitled1/router.dart';
-import 'package:untitled1/ui/home_page.dart';
-import 'package:untitled1/ui/login_screen.dart';
-import 'package:untitled1/ui/search_page.dart';
-import 'package:untitled1/utils/colors.dart';
-import 'package:untitled1/widget/image_slider.dart';
 import 'package:untitled1/ui/registration_screen.dart';
 
 void main() {

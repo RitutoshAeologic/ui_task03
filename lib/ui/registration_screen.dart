@@ -1,6 +1,6 @@
 import 'package:country_list_pick/country_list_pick.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled1/utils/colors.dart';
+import '../constant/colors.dart';
 
 import '../router.dart';
 

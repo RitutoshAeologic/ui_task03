@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:untitled1/widget/health_concern.dart';
+import 'package:untitled1/widget/speciality_category.dart';
 
 import '../router.dart';
-import '../utils/colors.dart';
+import '../constant/colors.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -9,27 +11,27 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade300,
+      backgroundColor: AppColors.searchBG,
       appBar: AppBar(
         leading: IconButton(onPressed: () => Navigator.pushNamed(context,
           Routes.homeScreen,), icon: Icon(Icons.arrow_back),),
         backgroundColor: AppColors.appBarColor,
         title:Row(
           children: [
-            Text("Find & Book"),
-            SizedBox(width: 115,),
+            const Text("Find & Book"),
+            const SizedBox(width: 115,),
             Column(
               children: [
-                Text("LOCATION",style: TextStyle(
+                const Text("LOCATION",style: TextStyle(
                   fontSize: 10,
                 ),),
               Row(
-                children: [
+                children: const [
                   Text("Bangalore",
                     style: TextStyle(
                       fontSize: 12,
                     ),),
-                  Icon(Icons.arrow_drop_down, color: Colors.grey,),
+                  Icon(Icons.arrow_drop_down, color: AppColors.grey,),
                 ],
               )
               ],
@@ -45,7 +47,7 @@ class SearchScreen extends StatelessWidget {
               clipBehavior: Clip.antiAlias,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.0),
-                  color: Colors.white
+                  color: AppColors.white
               ),
               child: const TextField( textAlign: TextAlign.start,
                 decoration: InputDecoration(
@@ -63,8 +65,8 @@ class SearchScreen extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.only(top: 10,left: 20,right: 20,bottom: 10),
-              margin: EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 10,left: 20,right: 20,bottom: 10),
+              margin: const EdgeInsets.only(top: 20),
               color: AppColors.white,
               child: SingleChildScrollView(
                 child: Column(
@@ -75,13 +77,13 @@ class SearchScreen extends StatelessWidget {
                       children: [
                         Text("Search by Health concern",
                         style: TextStyle(
-                          color: Colors.grey.shade600,
+                          color: AppColors.greyShadeText,
                           fontSize: 15,
                           fontWeight: FontWeight.bold
                         ),),
-                        Text("Explore more",
+                        const Text("Explore more",
                           style: TextStyle(
-                            color: Colors.blue,
+                            color: AppColors.blue,
                             fontSize: 15,
                             fontWeight: FontWeight.bold
                           ),),
@@ -89,105 +91,18 @@ class SearchScreen extends StatelessWidget {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(top: 20,),
-                                child: Column(
-                                  children: [
-                                    CircleAvatar(
-                                        radius: 24,
-                                        child: Image.asset("img/person.png",scale: 1.1,)
-                                    ),
-                                    SizedBox(height: 5,),
-                                    Text("Health Concern")
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(top: 20),
-                                child: Column(
-                                  children: [
-                                    CircleAvatar(
-                                        radius: 24,
-                                        child: Image.asset("img/person.png",scale: 1.1,)
-                                    ),
-                                    SizedBox(height: 5,),
-                                    Text("Health Concern")
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
+                          child:
+                         HealthConcernWidget(concernTitle: "Health Concern"),
                         ),
                         Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(top: 20,),
-                                child: Column(
-                                  children: [
-                                    CircleAvatar(
-                                        radius: 24,
-                                        child: Image.asset("img/person.png",scale: 1.1,)
-                                    ),
-                                    SizedBox(height: 5,),
-                                    Text("Health Concern")
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(top: 20),
-                                child: Column(
-                                  children: [
-                                    CircleAvatar(
-                                        radius: 24,
-                                        child: Image.asset("img/person.png",scale: 1.1,)
-                                    ),
-                                    SizedBox(height: 5,),
-                                    Text("Health Concern")
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
+                          child:
+                          HealthConcernWidget(concernTitle: "Health Concern"),
                         ),
                         Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(top: 20,),
-                                child: Column(
-                                  children: [
-                                    CircleAvatar(
-                                        radius: 24,
-                                        child: Image.asset("img/person.png",scale: 1.1,)
-                                    ),
-                                    SizedBox(height: 5,),
-                                    Text("Health Concern")
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(top: 20),
-                                child: Column(
-                                  children: [
-                                    CircleAvatar(
-                                        radius: 24,
-                                        child: Image.asset("img/person.png",scale: 1.1,)
-                                    ),
-                                    SizedBox(height: 5,),
-                                    Text("Health Concern")
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
+                          child:
+                          HealthConcernWidget(concernTitle: "Health Concern"),
                         ),
                         // Container(
                         //   margin: EdgeInsets.only(top: 20),
@@ -219,12 +134,12 @@ class SearchScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 10,),
                     Divider(
-                      color: Colors.grey,
+                      color: AppColors.grey,
                     ),
                     SizedBox(height: 10,),
                     Text("Search by speciality",
                       style: TextStyle(
-                        color: Colors.grey.shade600,
+                        color: AppColors.greyShadeText,
                         fontSize: 15,
                         fontWeight: FontWeight.bold
                       ),),
@@ -243,218 +158,37 @@ class SearchScreen extends StatelessWidget {
                     // )
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.all(4),
-                      padding: EdgeInsets.symmetric(vertical: 20,horizontal: 8),
-                      color: Colors.grey.shade200,
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                              radius: 22,
-                              child: Image.asset("img/person.png",scale: 1.1,)
-                          ),
-                          SizedBox(width: 10,),
-                          Text("Specialization",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15
-                          ),),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(4),
-                      padding: EdgeInsets.symmetric(vertical: 20,horizontal: 8),
-                      color: Colors.grey.shade200,
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                              radius: 22,
-                              child: Image.asset("img/person.png",scale: 1.1,)
-                          ),
-                          SizedBox(width: 10,),
-                          Text("Specialization",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15
-                            ),),
-                        ],
-                      ),
-                    ),
+                  children: const [
+                   SpecialityWidget(specialityTitle: "Specialization"),
+                    SpecialityWidget(specialityTitle: "Specialization"),
                   ],
                 ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.all(4),
-                          padding: EdgeInsets.symmetric(vertical: 20,horizontal: 8),
-                          color: Colors.grey.shade200,
-                          child: Row(
-                            children: [
-                              CircleAvatar(
-                                  radius: 22,
-                                  child: Image.asset("img/person.png",scale: 1.1,)
-                              ),
-                              SizedBox(width: 10,),
-                              Text("Specialization",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15
-                                ),),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(4),
-                          padding: EdgeInsets.symmetric(vertical: 20,horizontal: 8),
-                          color: Colors.grey.shade200,
-                          child: Row(
-                            children: [
-                              CircleAvatar(
-                                  radius: 22,
-                                  child: Image.asset("img/person.png",scale: 1.1,)
-                              ),
-                              SizedBox(width: 10,),
-                              Text("Specialization",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15
-                                ),),
-                            ],
-                          ),
-                        ),
+                      children: const [
+                        SpecialityWidget(specialityTitle: "Specialization"),
+                        SpecialityWidget(specialityTitle: "Specialization"),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.all(4),
-                          padding: EdgeInsets.symmetric(vertical: 20,horizontal: 8),
-                          color: Colors.grey.shade200,
-                          child: Row(
-                            children: [
-                              CircleAvatar(
-                                  radius: 22,
-                                  child: Image.asset("img/person.png",scale: 1.1,)
-                              ),
-                              SizedBox(width: 10,),
-                              Text("Specialization",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15
-                                ),),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(4),
-                          padding: EdgeInsets.symmetric(vertical: 20,horizontal: 8),
-                          color: Colors.grey.shade200,
-                          child: Row(
-                            children: [
-                              CircleAvatar(
-                                  radius: 22,
-                                  child: Image.asset("img/person.png",scale: 1.1,)
-                              ),
-                              SizedBox(width: 10,),
-                              Text("Specialization",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15
-                                ),),
-                            ],
-                          ),
-                        ),
+                      children: const [
+                        SpecialityWidget(specialityTitle: "Specialization"),
+                        SpecialityWidget(specialityTitle: "Specialization"),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.all(4),
-                          padding: EdgeInsets.symmetric(vertical: 20,horizontal: 8),
-                          color: Colors.grey.shade200,
-                          child: Row(
-                            children: [
-                              CircleAvatar(
-                                  radius: 22,
-                                  child: Image.asset("img/person.png",scale: 1.1,)
-                              ),
-                              SizedBox(width: 10,),
-                              Text("Specialization",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15
-                                ),),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(4),
-                          padding: EdgeInsets.symmetric(vertical: 20,horizontal: 8),
-                          color: Colors.grey.shade200,
-                          child: Row(
-                            children: [
-                              CircleAvatar(
-                                  radius: 22,
-                                  child: Image.asset("img/person.png",scale: 1.1,)
-                              ),
-                              SizedBox(width: 10,),
-                              Text("Specialization",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15
-                                ),),
-                            ],
-                          ),
-                        ),
+                      children: const [
+                        SpecialityWidget(specialityTitle: "Specialization"),
+                        SpecialityWidget(specialityTitle: "Specialization"),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-
-                          margin: EdgeInsets.all(4),
-                          padding: EdgeInsets.symmetric(vertical: 20,horizontal: 8),
-                          color: Colors.grey.shade200,
-                          child: Row(
-                            children: [
-                              CircleAvatar(
-                                  radius: 22,
-                                  child: Image.asset("img/person.png",scale: 1.1,)
-                              ),
-                              SizedBox(width: 10,),
-                              Text("Specialization",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15
-                                ),),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(4),
-                          padding: EdgeInsets.symmetric(vertical: 20,horizontal: 8),
-                          color: Colors.grey.shade200,
-                          child: Row(
-                            children: [
-                              CircleAvatar(
-                                  radius: 22,
-                                  child: Image.asset("img/person.png",scale: 1.1,)
-                              ),
-                              SizedBox(width: 10,),
-                              Text("Specialization",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15
-                                ),),
-                            ],
-                          ),
-                        ),
+                      children: const [
+                        SpecialityWidget(specialityTitle: "Specialization"),
+                        SpecialityWidget(specialityTitle: "Specialization"),
                       ],
                     ),
                   ],

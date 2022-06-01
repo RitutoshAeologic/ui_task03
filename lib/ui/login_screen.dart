@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled1/widget/image_slider.dart';
 
-import '../utils/colors.dart';
+import '../constant/colors.dart';
 
 
 
@@ -99,26 +99,9 @@ class _LoginPageState extends State<LoginPage> {
         body:
         ListView(
           children: [
-            SizedBox(
-              height: 350.0,
-              width: double.infinity,
-              child: Carousel(
-                dotSize: 4.0,
-                dotSpacing: 10.0,
-                dotColor: Colors.grey,
-                dotBgColor: Colors.transparent,
-                dotPosition: DotPosition.bottomLeft,
-                dotVerticalPadding: 30,
-                images: [
-                  Image.asset("img/welcome_one.jpg",fit: BoxFit.cover,),
-                  Image.asset("img/welcome_two.jpg",fit: BoxFit.cover,),
-                  Image.asset("img/welcome_three.jpg",fit: BoxFit.cover,),
-                  Image.asset("img/welcome_four.jpg",fit: BoxFit.cover,),
-                ],
-              ),
-            ),
+           ImageSlider(),
             Padding(
-                padding: EdgeInsets.only(left: 20,right: 20,top: 10,bottom: 10),
+                padding: EdgeInsets.only(left: 20,right: 20,top: 30,bottom: 10),
                 child: Text("Let's gets started! Enter Your Mobile Number",
                   style: TextStyle(
                     fontSize: 12,
@@ -128,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
             Stack(
               children: [
                 Container(
-                  margin: EdgeInsets.only(left: 20,right: 20,top: 20,bottom: 20),
+                  margin: EdgeInsets.only(left: 20,right: 20,top: 15,bottom: 20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                     border: Border.all(
@@ -161,7 +144,7 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             Padding(
-                padding: EdgeInsets.only(left: 20,right: 20,top: 10,bottom: 10),
+                padding: EdgeInsets.only(left: 20,),
                 child: Text("Trouble signing in?",textAlign: TextAlign.left,
                   style: TextStyle(
                       fontSize: 12,

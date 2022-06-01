@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled1/utils/colors.dart';
+import 'package:untitled1/constant/colors.dart';
+import 'package:untitled1/widget/other_service.dart';
 
 import '../router.dart';
 class HomeScreen extends StatelessWidget {
@@ -43,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                   child:
                      Center(
                        child: Text("Explore",
-                        style: TextStyle(fontSize: 12,color: Colors.black),
+                        style: TextStyle(fontSize: 12,color: AppColors.black),
                     ),
                      ),
 
@@ -62,7 +63,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   child:Center(
                     child: Text("PLUS",
-                        style: TextStyle(fontSize: 12,color: Colors.white),
+                        style: TextStyle(fontSize: 12,color: AppColors.white),
                       ),
                   ),
 
@@ -136,17 +137,16 @@ class HomeScreen extends StatelessWidget {
                                decoration: BoxDecoration(
                                  color: Colors.white,
                                  borderRadius: const BorderRadius.only(
-                                   //topRight: Radius.circular(69),
-                                   bottomLeft: Radius.circular(14),
+                                 bottomLeft: Radius.circular(14),
                                    bottomRight: Radius.circular(14),
-                                   // topLeft: Radius.circular(27)
+
                                  ),
                                ),
                                child: Column(
                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                 children: [
+                                 children: const [
                                    Padding(
-                                     padding: const EdgeInsets.symmetric(vertical: 4,horizontal: 10),
+                                     padding: EdgeInsets.symmetric(vertical: 4,horizontal: 10),
                                      child: Text("Find Doctors Near \n"
                                          "You",
                                        style: TextStyle(
@@ -155,9 +155,9 @@ class HomeScreen extends StatelessWidget {
                                        ),),
                                    ),
                                    Padding(
-                                     padding: const EdgeInsets.symmetric(horizontal: 9),
+                                     padding: EdgeInsets.symmetric(horizontal: 9),
                                      child: Text("Confirmed appointments",
-                                       style: TextStyle(color: Colors.grey,
+                                       style: TextStyle(color: AppColors.grey,
                                            fontSize: 7
                                        ),),
                                    ),
@@ -168,12 +168,12 @@ class HomeScreen extends StatelessWidget {
                        ],
                      ),
                    ),
-                   Container(
+                   Container (
                      height: 180,
                      width: 150,
-                     margin: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
-                     decoration: BoxDecoration(
-                         borderRadius: const BorderRadius.all(
+                     margin:  EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+                     decoration:  const BoxDecoration(
+                         borderRadius: BorderRadius.all(
                            Radius.circular(15),
                          ),
                          image: DecorationImage(
@@ -195,17 +195,15 @@ class HomeScreen extends StatelessWidget {
                                decoration: BoxDecoration(
                                  color: Colors.white,
                                  borderRadius: const BorderRadius.only(
-                                   //topRight: Radius.circular(69),
                                    bottomLeft: Radius.circular(14),
                                    bottomRight: Radius.circular(14),
-                                   // topLeft: Radius.circular(27)
                                  ),
                                ),
                                child: Column(
                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                 children: [
+                                 children: const [
                                    Padding(
-                                     padding: const EdgeInsets.symmetric(vertical: 4,horizontal: 10),
+                                     padding: EdgeInsets.symmetric(vertical: 4,horizontal: 10),
                                      child: Text("Instant Video \n"
                                          "Consultation",
                                        style: TextStyle(
@@ -214,9 +212,9 @@ class HomeScreen extends StatelessWidget {
                                        ),),
                                    ),
                                    Padding(
-                                     padding: const EdgeInsets.symmetric(horizontal: 9),
+                                     padding: EdgeInsets.symmetric(horizontal: 9),
                                      child: Text("Connect within 60 secs",
-                                       style: TextStyle(color: Colors.grey,
+                                       style: TextStyle(color: AppColors.grey,
                                            fontSize: 7
                                        ),),
                                    ),
@@ -228,14 +226,14 @@ class HomeScreen extends StatelessWidget {
                            top: 10,
                            left: 10,
                            child: Container(
-                             padding: EdgeInsets.symmetric(vertical: 5,horizontal: 5),
-                             decoration: BoxDecoration(
-                                 borderRadius: const BorderRadius.all(
+                             padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 5),
+                             decoration: const BoxDecoration(
+                                 borderRadius: BorderRadius.all(
                                    Radius.circular(3),
                                  ),
                                color: AppColors.white,
                          ),
-                           child: Text( "30% OFF",
+                           child: const Text( "30% OFF",
                            style: TextStyle(
                              fontSize: 8,
                            ),
@@ -249,161 +247,9 @@ class HomeScreen extends StatelessWidget {
                ),
                Row(
                  children: [
-                   Container(
-                     height: 110,
-                     width: 100,
-                     margin: EdgeInsets.only(top: 10, left: 20),
-                     decoration: BoxDecoration(
-                         borderRadius: const BorderRadius.all(
-                           Radius.circular(15),
-                         ),
-                         image: DecorationImage(
-                             image: AssetImage("img/doctorbg.jpg"),
-
-                             fit: BoxFit.fill
-                         )
-                     ),
-                     child:  Stack(
-                       alignment: AlignmentDirectional.bottomCenter,
-                       children: [
-                         Positioned(
-                             bottom: 0,
-                             top: 80,
-                             left: 0,
-                             right: 0,
-                             child: Container(
-                               //width: 149,
-                               decoration: BoxDecoration(
-                                 color: Colors.white,
-                                 borderRadius: const BorderRadius.only(
-                                   //topRight: Radius.circular(69),
-                                   bottomLeft: Radius.circular(14),
-                                   bottomRight: Radius.circular(14),
-                                   // topLeft: Radius.circular(27)
-                                 ),
-                               ),
-                               child: Column(
-                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                 children: [
-                                   Padding(
-                                     padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 10),
-                                     child: Text("Medicines",
-                                       style: TextStyle(
-                                           fontWeight: FontWeight.bold,
-                                           fontSize: 10
-                                       ),),
-                                   ),
-
-
-                                 ],
-                               ),
-                             ))
-                       ],
-                     ),
-                   ),
-                   Container(
-                     height: 110,
-                     width: 100,
-                     margin: EdgeInsets.only(top: 10, left: 20),
-                     decoration: BoxDecoration(
-                         borderRadius: const BorderRadius.all(
-                           Radius.circular(15),
-                         ),
-                         image: DecorationImage(
-                             image: AssetImage("img/doctorbg.jpg"),
-
-                             fit: BoxFit.fill
-                         )
-                     ),
-                     child:  Stack(
-                       alignment: AlignmentDirectional.bottomCenter,
-                       children: [
-                         Positioned(
-                             bottom: 0,
-                             top: 80,
-                             left: 0,
-                             right: 0,
-                             child: Container(
-                               //width: 149,
-                               decoration: BoxDecoration(
-                                 color: Colors.white,
-                                 borderRadius: const BorderRadius.only(
-                                   //topRight: Radius.circular(69),
-                                   bottomLeft: Radius.circular(14),
-                                   bottomRight: Radius.circular(14),
-                                   // topLeft: Radius.circular(27)
-                                 ),
-                               ),
-                               child: Column(
-                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                 children: const [
-                                   Padding(
-                                     padding: EdgeInsets.symmetric(vertical: 8,horizontal: 10),
-                                     child: Text("Lab Tests",
-                                       style: TextStyle(
-                                           fontWeight: FontWeight.bold,
-                                           fontSize: 10
-                                       ),),
-                                   ),
-
-
-                                 ],
-                               ),
-                             ))
-                       ],
-                     ),
-                   ),
-                   Container(
-                     height: 110,
-                     width: 100,
-                     margin: EdgeInsets.only(top: 10, left: 20),
-                     decoration: BoxDecoration(
-                         borderRadius: const BorderRadius.all(
-                           Radius.circular(15),
-                         ),
-                         image: DecorationImage(
-                             image: AssetImage("img/doctorbg.jpg"),
-
-                             fit: BoxFit.fill
-                         )
-                     ),
-                     child:  Stack(
-                       alignment: AlignmentDirectional.bottomCenter,
-                       children: [
-                         Positioned(
-                             bottom: 0,
-                             top: 80,
-                             left: 0,
-                             right: 0,
-                             child: Container(
-                               //width: 149,
-                               decoration: BoxDecoration(
-                                 color: Colors.white,
-                                 borderRadius: const BorderRadius.only(
-                                   //topRight: Radius.circular(69),
-                                   bottomLeft: Radius.circular(14),
-                                   bottomRight: Radius.circular(14),
-                                   // topLeft: Radius.circular(27)
-                                 ),
-                               ),
-                               child: Column(
-                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                 children: const [
-                                   Padding(
-                                     padding: EdgeInsets.symmetric(vertical: 8,horizontal: 10),
-                                     child: Text("Surgeries",
-                                       style: TextStyle(
-                                           fontWeight: FontWeight.bold,
-                                           fontSize: 10
-                                       ),),
-                                   ),
-
-                                 ],
-                               ),
-                             ))
-                       ],
-                     ),
-                   ),
+                  ServiceWidget(title: "Medicines"),
+                  ServiceWidget(title: "Lab Tests"),
+                   ServiceWidget(title: "Surgeries")
                  ],
                ),
                SizedBox(height: 10,),
