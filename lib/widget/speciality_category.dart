@@ -14,20 +14,27 @@ class SpecialityWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(4),
-      padding: EdgeInsets.symmetric(vertical: 20,horizontal: 8),
+      padding: EdgeInsets.symmetric(vertical: 10,horizontal: 8),
       color: AppColors.specialityBG,
       child: Row(
         children: [
-          CircleAvatar(
-              radius: 22,
-              child: Image.asset("img/person.png",scale: 1.1,)
-          ),
-          SizedBox(width: 10,),
-          Text(specialityTitle,
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 15
-            ),),
+        Wrap(
+          direction: Axis.vertical ,
+          spacing: 10.0,
+          alignment: WrapAlignment.spaceEvenly,
+          children: [
+            CircleAvatar(
+                radius: 21,
+                child: Image.asset("img/person.png",scale: 0.1,)
+            ),
+            SizedBox(width: 9,),
+            Text(specialityTitle,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 11
+              ),),
+          ],
+        )
         ],
       ),
     );

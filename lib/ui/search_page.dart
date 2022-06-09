@@ -69,7 +69,8 @@ class SearchScreen extends StatelessWidget {
               margin: const EdgeInsets.only(top: 20),
               color: AppColors.white,
               child: SingleChildScrollView(
-                child: Column(
+                child:
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
@@ -144,53 +145,78 @@ class SearchScreen extends StatelessWidget {
                         fontWeight: FontWeight.bold
                       ),),
                     SizedBox(height: 10,),
-                    // GridView.count(crossAxisCount: 2,
-                    // children: List.generate(10, (index)
-                    // {
-                    //
-                    //   return Container(
-                    //     height: 50,
-                    //     width: 50,
-                    //     color: Colors.grey,
-                    //
-                    //   );
-                    // })
-                    // )
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
-                   SpecialityWidget(specialityTitle: "Specialization"),
-                    SpecialityWidget(specialityTitle: "Specialization"),
-                  ],
-                ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
-                        SpecialityWidget(specialityTitle: "Specialization"),
-                        SpecialityWidget(specialityTitle: "Specialization"),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
-                        SpecialityWidget(specialityTitle: "Specialization"),
-                        SpecialityWidget(specialityTitle: "Specialization"),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
-                        SpecialityWidget(specialityTitle: "Specialization"),
-                        SpecialityWidget(specialityTitle: "Specialization"),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
-                        SpecialityWidget(specialityTitle: "Specialization"),
-                        SpecialityWidget(specialityTitle: "Specialization"),
-                      ],
-                    ),
+                        SizedBox(
+                          height: 500,
+                          child: CustomScrollView(
+                            primary: true,
+                            scrollDirection: Axis.vertical,
+                            slivers: <Widget>[
+                              SliverPadding(
+                                padding: const EdgeInsets.only(left: 20,top: 20,right: 20,bottom: 150),
+                                sliver: SliverGrid.count(
+                                  childAspectRatio: (0.4/0.2),
+                                  crossAxisSpacing: 10,
+                                  mainAxisSpacing: 10,
+                                  crossAxisCount: 2,
+                                  children: <Widget>[
+                                    SpecialityWidget(specialityTitle: "specialityTitle"),
+                                    SpecialityWidget(specialityTitle: "specialityTitle"),
+                                    SpecialityWidget(specialityTitle: "specialityTitle"),
+                                    SpecialityWidget(specialityTitle: "specialityTitle"),
+                                    SpecialityWidget(specialityTitle: "specialityTitle"),
+                                    SpecialityWidget(specialityTitle: "specialityTitle"),
+                                    SpecialityWidget(specialityTitle: "specialityTitle"),
+                                    SpecialityWidget(specialityTitle: "specialityTitle"),
+                                    SpecialityWidget(specialityTitle: "specialityTitle"),
+                                    SpecialityWidget(specialityTitle: "specialityTitle"),
+                                    SpecialityWidget(specialityTitle: "specialityTitle"),
+                                    SpecialityWidget(specialityTitle: "specialityTitle"),
+
+
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+
+
+
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.start,
+                //   children: const [
+                //    SpecialityWidget(specialityTitle: "Specialization"),
+                //     SpecialityWidget(specialityTitle: "Specialization"),
+                //   ],
+                // ),
+                //     Row(
+                //       mainAxisAlignment: MainAxisAlignment.start,
+                //       children: const [
+                //         SpecialityWidget(specialityTitle: "Specialization"),
+                //         SpecialityWidget(specialityTitle: "Specialization"),
+                //       ],
+                //     ),
+                //     Row(
+                //       mainAxisAlignment: MainAxisAlignment.start,
+                //       children: const [
+                //         SpecialityWidget(specialityTitle: "Specialization"),
+                //         SpecialityWidget(specialityTitle: "Specialization"),
+                //       ],
+                //     ),
+                //     Row(
+                //       mainAxisAlignment: MainAxisAlignment.start,
+                //       children: const [
+                //         SpecialityWidget(specialityTitle: "Specialization"),
+                //         SpecialityWidget(specialityTitle: "Specialization"),
+                //       ],
+                //     ),
+                //     Row(
+                //       mainAxisAlignment: MainAxisAlignment.start,
+                //       children: const [
+                //         SpecialityWidget(specialityTitle: "Specialization"),
+                //         SpecialityWidget(specialityTitle: "Specialization"),
+                //       ],
+                //     ),
                   ],
                 ),
               ),
